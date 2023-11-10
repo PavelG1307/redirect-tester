@@ -3,4 +3,11 @@
     background-color: #1e1e1e;
     flex: 1;
     white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-all;
+}
+
+.code span {
+    overflow-wrap: break-word;
+    word-wrap: break-all;
 }
