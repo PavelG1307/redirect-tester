@@ -3,6 +3,7 @@ import { parseHash, parseQuery } from './utils/parser';
 import './App.css'
 import { FRAGMENT_GROUP_TITLE, QUERY_GROUP_TITLE } from './constants/labels';
 import Placeholder from './components/Placeholder/Placeholder';
+import Hint from './components/Hint/Hint';
 
 function App() {
   const hash = window.location.hash
@@ -17,7 +18,7 @@ function App() {
       {
         !parsedQuery.length && !parsedHash.length
         ? <Placeholder />
-        : null
+        : <Hint/>
       }
       {
         parsedQuery.length
