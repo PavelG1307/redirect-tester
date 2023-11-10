@@ -1,0 +1,1 @@
+export const JSON_LANGUAGE_NAME = 'json'

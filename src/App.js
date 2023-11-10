@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import ItemsGroup from './components/ItemsGroup/ItemsGroup';
+import { parseHash, parseQuery } from './utils/parser';
+import './App.css'
+import { FRAGMENT_GROUP_TITLE, QUERY_GROUP_TITLE } from './constants/labels';
 
 function App() {
+  const hash = window.location.hash
+  const query = window.location.search
+
+  const parsedHash = parseHash(hash)
+  const parsedQuery = parseQuery(query)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="title">Callback tester</div>
+      {
+        parsedQuery.length
+          ? <ItemsGroup
+              title={QUERY_GROUP_TITLE}
+              items={parsedQuery}
+            />
+          : null
+      }
+      {
+        parsedHash.length
+          ? <ItemsGroup
+            title={FRAGMENT_GROUP_TITLE}
+            items={parsedHash}
+          />
+          : null
+      }
     </div>
   );
 }

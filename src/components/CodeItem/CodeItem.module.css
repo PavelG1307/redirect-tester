@@ -1,0 +1,6 @@
+.code {
+    cursor: pointer;
+    background-color: #1e1e1e;
+    flex: 1;
+    white-space: pre-wrap;
+}

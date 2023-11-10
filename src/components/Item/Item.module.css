@@ -1,0 +1,23 @@
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    flex: 1;
+    align-items: center;
+}
+
+.jsonItem {
+    margin-top: 40px;
+    font-weight: 700;
+}
+
+.valueItem {
+    word-break: break-all;
+    cursor: pointer;
+    flex: 1;
+}
+
+.titleItem {
+    cursor: pointer;
+    flex: .5;
+}
