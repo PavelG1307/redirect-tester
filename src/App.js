@@ -2,6 +2,7 @@ import ItemsGroup from './components/ItemsGroup/ItemsGroup';
 import { parseHash, parseQuery } from './utils/parser';
 import './App.css'
 import { FRAGMENT_GROUP_TITLE, QUERY_GROUP_TITLE } from './constants/labels';
+import Placeholder from './components/Placeholder/Placeholder';
 
 function App() {
   const hash = window.location.hash
@@ -13,6 +14,11 @@ function App() {
   return (
     <div className="App">
       <div className="title">Callback tester</div>
+      {
+        !parsedQuery.length && !parsedHash.length
+        ? <Placeholder />
+        : null
+      }
       {
         parsedQuery.length
           ? <ItemsGroup
